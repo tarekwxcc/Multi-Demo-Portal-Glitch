@@ -1,0 +1,152 @@
+/* Base Styles */
+body {
+  font-family: 'Roboto', Arial, sans-serif; /* Font similar to Cisco's site */
+  background-color: #f2f2f2; /* Light gray background */
+  color: #333; /* Standard text color */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header */
+header {
+  background-color: #005073; /* Cisco's dark blue */
+  color: #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
+  color: #f0f0f0; /* Lighter gray for better contrast */
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #007a9a; /* Lighter blue for the navigation bar */
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 15px 20px;
+  display: block;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #004458; /* Darker blue on hover */
+  color: #ffffff;
+  border-radius: 5px;
+}
+
+/* Main Content */
+main {
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+h1 {
+  color: #005073;
+  font-size: 36px;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+/* Buttons */
+button, input[type="submit"] {
+  background-color: #007a9a; /* Primary button color */
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #004458; /* Darker blue on hover */
+}
+
+/* Forms */
+form {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #ffffff; /* White background for forms */
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  background-color: #fff; /* White table background */
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 12px;
+}
+
+td {
+  padding: 12px;
+  text-align: left;
+}
+
+/* Footer */
+footer {
+  background-color: #007a9a; /* Dark footer similar to the header */
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+  font-size: 14px;
+}
+
+/* Links */
+a {
+  color: #007a9a;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: #004458; /* Darker blue on hover */
+}

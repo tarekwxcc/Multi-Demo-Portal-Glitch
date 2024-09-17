@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= headerText %></title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1><%= headerText %></h1> <!-- Dynamic header text -->
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/order"><%= initiateOrderText %></a></li> <!-- Link for initiating order -->
+        <li><a href="/verify"><%= verifyText %></a></li> <!-- Link for the generic verify page -->
+        <li><a href="/verify-payment">Verify Payment</a></li> <!-- Static text for verifying payment -->
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1><%= welcomeText %></h1> <!-- Dynamic welcome text -->
+    <p><%= instructionText %></p> <!-- Dynamic instruction text -->
+    <ul>
+      <li><a href="/verify"><%= verifyText %></a></li> <!-- Link for the generic verify page -->
+      <li><a href="/order"><%= initiateOrderText %></a></li> <!-- Link for initiating order -->
+      <li><a href="/verify-payment">Verify Payment</a></li> <!-- Static text for verifying payment -->
+    </ul>
+  </main>
+  <footer>
+    <p><%- footerText %></p>
+  </footer>
+</body>
+</html>
