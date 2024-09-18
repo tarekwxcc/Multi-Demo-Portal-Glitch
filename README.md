@@ -9,7 +9,7 @@ This portal is designed to handle booking services for multiple verticals (e.g.,
 To guide you through the entire process, here are 3 video tutorials:
 
 	1. Demo : Showing the value of the portal and how it can be used.
-  2. Deployment : Setting up Airtable & Stripe Integration & Deploying the Portal to Glitch
+        2. Deployment : Setting up Airtable & Stripe Integration & Deploying the Portal to Glitch
 	3. Creating a New Vertical for a Custom Demo
 
 **Features:**
@@ -42,6 +42,7 @@ You can also review the video instuctation on Vidcast : "Deployment : Setting up
 	•	In your imported base, copy the AIRTABLE_BASE_ID. You can find it in the Airtable URL (airtable.com/{base_id}/...).
 	3.	Updating .env Variables:
 	•	Create a .env file in your project and add the following variables:
+ 
 AIRTABLE_API_KEY=your_airtable_api_key
 AIRTABLE_BASE_ID=your_airtable_base_id
 AIRTABLE_VERTICAL_TABLE=Current Vertical
@@ -108,10 +109,3 @@ I am tackeling this one on a seperate Vidcast called : "Customization : Creating
 4. How do I deploy changes from GitHub?
 
 	•	Sync your Glitch project with GitHub, and updates will be automatically deployed when you push changes to the main branch.
-
-**Walkthrough Videos**
-
-To guide you through the entire process, here are 3 video tutorials:
-
-	1.	Deployment : Setting up Airtable & Stripe Integration & Deploying the Portal to Glitch
-	2.	Creating a New Vertical for a Custom Demo
