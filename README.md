@@ -9,7 +9,7 @@ This portal is designed to handle booking services for multiple verticals (e.g.,
 To guide you through the entire process, here are 3 video tutorials:
 
 	1. Demo : Showing the value of the portal and how it can be used.
-        2. Deployment : Setting up Airtable & Stripe Integration & Deploying the Portal to Glitch
+	2. Deployment : Setting up Airtable & Stripe Integration & Deploying the Portal to Glitch
 	3. Creating a New Vertical for a Custom Demo
 
 **Features:**
