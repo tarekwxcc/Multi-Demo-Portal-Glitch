@@ -1,4 +1,4 @@
-**Tarek Booking Portal Setup Guide**
+**Tarek Multi-Demo-Portal Setup Guide**
 
 **Overview**
 
