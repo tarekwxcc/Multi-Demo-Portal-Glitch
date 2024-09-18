@@ -2,12 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title><%= headerText %></title>
+    <title><%= headerText %></title> <!-- Dynamic Page Title -->
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <header>
         <h1><%= headerText %></h1>
+        <nav>
+            <ul>
+                <li><a href="/"><%= homeText %></a></li> <!-- Dynamic Home button text -->
+                <li><a href="/order"><%= initiateOrderText %></a></li> <!-- Dynamic Order link -->
+                <li><a href="/verify"><%= verifyText %></a></li> <!-- Dynamic Verify link -->
+                <li><a href="/verify-payment"><%= verifyPaymentText %></a></li> <!-- Dynamic Verify Payment link -->
+            </ul>
+        </nav>
     </header>
     <main>
         <h2>Transaction Details</h2>

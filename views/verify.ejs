@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= verifyText %> - BRP Services</title>
+  <title><%= verifyText %> </title> <!-- Dynamic Page Title -->
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header>
     <h1><%= headerText %></h1> <!-- Dynamic header text -->
+    <nav>
+      <ul>
+        <li><a href="/"><%= homeText %></a></li> <!-- Dynamic Home link -->
+        <li><a href="/order"><%= initiateOrderText %></a></li> <!-- Dynamic Order link -->
+        <li><a href="/verify"><%= verifyText %></a></li> <!-- Dynamic Verify link -->
+        <li><a href="/verify-payment"><%= verifyPaymentText %></a></li> <!-- Dynamic Verify Payment link -->
+      </ul>
+    </nav>
   </header>
   <main>
     <h2><%= verifyText %></h2> <!-- Dynamic verify text -->
@@ -19,7 +27,7 @@
     </form>
   </main>
   <footer>
-    <p><%- footerText %></p>
+    <p><%- footerText %></p> <!-- Dynamic footer text -->
   </footer>
 </body>
 </html>

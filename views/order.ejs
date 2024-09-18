@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title><%= pageTitle %></title>
+  <title><%= pageTitle %></title> <!-- Dynamic Page Title -->
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
   <header>
-    <h1><%= headerText %></h1>
+    <h1><%= headerText %></h1> <!-- Dynamic Header Text -->
+    <nav>
+      <ul>
+        <li><a href="/"><%= homeText %></a></li> <!-- Dynamic Home button text -->
+        <li><a href="/order"><%= initiateOrderText %></a></li> <!-- Dynamic Order link -->
+        <li><a href="/verify"><%= verifyText %></a></li> <!-- Dynamic Verify link -->
+        <li><a href="/verify-payment"><%= verifyPaymentText %></a></li> <!-- Dynamic Verify Payment link -->
+      </ul>
+    </nav>
   </header>
   <main>
-    <h2><%= instructionText %></h2>
+    <h2><%= instructionText %></h2> <!-- Dynamic Instruction Text -->
     <form action="/order" method="POST">
-      <label for="firstName"><%= firstNameLabel %>:</label>
+      <label for="firstName"><%= firstNameLabel %>:</label> <!-- Dynamic First Name Label -->
       <input type="text" id="firstName" name="firstName" required>
 
-      <label for="lastName"><%= lastNameLabel %>:</label>
+      <label for="lastName"><%= lastNameLabel %>:</label> <!-- Dynamic Last Name Label -->
       <input type="text" id="lastName" name="lastName" required>
 
-      <label for="product"><%= productLabel %>:</label>
+      <label for="product"><%= productLabel %>:</label> <!-- Dynamic Product Label -->
       <select id="product" name="product" required>
         <% products.forEach(product => { %>
-          <option value="<%= product.id %>"><%= product.name %></option>
+          <option value="<%= product.id %>"><%= product.name %></option> <!-- Dynamic Product Options -->
         <% }); %>
       </select>
 
-      <button type="submit"><%= submitButtonText %></button>
+      <button type="submit"><%= submitButtonText %></button> <!-- Dynamic Submit Button Text -->
     </form>
   </main>
   <footer>
-    <p>&copy; 2024 Tarek Retail Services. All rights reserved.</p>
+    <p><%- footerText %></p> <!-- Dynamic Footer Text from Airtable -->
   </footer>
 </body>
 </html>
