@@ -7,134 +7,104 @@ This portal is designed to handle booking services for multiple verticals (e.g.,
 
 ## Walkthrough Videos
 
-To guide you through the entire process, here are 3 Vidcast tutorials:
+To guide you through the entire process, here are 3 video tutorials, plus a bonus video:
 
-1. **Tarek Multi-Demo-Portal, Part 1**: Demo and value of the portal (8 min 52 sec)
-2. **Tarek Multi-Demo-Portal, Part 2**: Setting up the portal (9 min 01 sec)
-3. **Tarek Multi-Demo-Portal, Part 3**: Customization and Creating a New Vertical for a Custom Demo (12 min 44 sec)
+1. [Demo and value of the portal](https://app.vidcast.io/share/82eb400a-3959-4954-879b-60d171141b63) (8min 52sec)
+2. [Setting up the portal](https://app.vidcast.io/share/03ef95a2-8e49-4fed-b4b9-3f328ed66e73) (9min 01sec)
+3. [Customization and creating a new vertical for a custom demo](https://app.vidcast.io/share/03ef95a2-8e49-4fed-b4b9-3f328ed66e73) (12min 44sec)
+4. Bonus: [Preparing for my upcoming insurance demo](https://app.vidcast.io/share/6a7742a7-fc88-40df-98d6-4790dbfc6973) (7min 37sec)
 
-**Bonus Video**:
-- **Tarek Multi-Demo-Portal, Bonus**: Preparing for my upcoming insurance demo (7 min 37 sec)
-
-## Features
-
+## Features:
 - Customizable verticals
 - Integration with Airtable for configuration management
 - Integration with Stripe for payment processing
-- Easy setup with `.env` variables
+- Easy setup with .env variables
 - Automated webhook handling for payment updates
 
 ## Prerequisites
-
 To use this portal, you’ll need:
-
 1. An Airtable account with an API key
 2. A Stripe account for payment processing
 3. A hosting service like Glitch (syncing with GitHub is recommended)
 
-## Step 1: Airtable Setup
+## Instructions
 
-1. **Importing the Airtable Base**:
-    - Use this shared Airtable base link: [Airtable Base](https://airtable.com/appiuy3ZRMNu7BQLd/shrN4PkssfLMNGi3u)
-    - Log into Airtable and copy the base to your own Airtable account.
-    - This base contains the two required tables (`Current Vertical` and `Configuration Table`), so no need to modify these variables further.
+### Step 1: Airtable Setup
 
-2. **Retrieve API Details**:
-    - In Airtable, go to **Account Overview** to retrieve your **AIRTABLE_API_KEY**.
-    - You can find the **AIRTABLE_BASE_ID** in the Airtable URL (e.g., `airtable.com/{base_id}/...`).
+1. **Import the Airtable Base:**
+   - [Click here to access and copy the Airtable base](https://airtable.com/appiuy3ZRMNu7BQLd/shrN4PkssfLMNGi3u). This base contains the two required tables: *Current Vertical* and *Configuration Table*.
+   
+2. **Retrieve API Details:**
+   - Go to your Airtable account settings and retrieve your **AIRTABLE_API_KEY**.
+   - In your imported base, copy the **AIRTABLE_BASE_ID** from the Airtable URL (e.g., airtable.com/{base_id}/...).
 
-## Step 2: Stripe Setup
+3. **Update the .env File:**
+   - Create a `.env` file in your project. You can use the `remove.env.js` resource file (found in the repository), rename it to `.env`, and add the following variables:
+     ```
+     AIRTABLE_API_KEY=your_airtable_api_key
+     AIRTABLE_BASE_ID=your_airtable_base_id
+     AIRTABLE_VERTICAL_TABLE=Current Vertical
+     AIRTABLE_CONFIG_TABLE=Configuration Table
+     ```
 
-1. **Create a Stripe Account**:
-    - Sign up for a test account at [Stripe](https://stripe.com).
-    - In your dashboard, go to the **API Keys** section and copy your **STRIPE_SECRET_KEY** (e.g., `sk_test_4eC39HqLyjWDarjtT1zdp7dc`).
+### Step 2: Stripe Setup
 
-2. **Setting Up Webhook Endpoint**:
-    - In the Stripe dashboard, create a webhook endpoint, setting the URL to your server’s `/webhook` route (e.g., `https://your-app.glitch.me/webhook`).
-    - Choose the event `payment_intent.succeeded` and copy your **STRIPE_WEBHOOK_SECRET** (e.g., `whsec_xxxxxxxx`).
+1. **Create a Stripe Account:**
+   - Go to [Stripe](https://stripe.com) and create a test account.
+   - In the dashboard, navigate to **API keys** and copy your **STRIPE_SECRET_KEY**.
 
-## Step 3: Sync with GitHub & Deploy to Glitch
+2. **Setting Up Webhook Endpoint:**
+   - In the Stripe dashboard, go to **Developers > Webhooks**, create a new webhook, and set the endpoint URL to your server’s `/webhook` route (e.g., `https://your-app.glitch.me/webhook`).
+   - Select **payment_intent.succeeded** as the event to listen for and copy the **STRIPE_WEBHOOK_SECRET**.
 
-1. **Pull the Project from GitHub**:
-    - Project link: [Tarek Multi-Demo-Portal-Glitch](https://github.com/tarekwxcc/Multi-Demo-Portal-Glitch)
-    - You can pull the project into Glitch by using the repository link: `tarekwxcc/Multi-Demo-Portal-Glitch`.
+3. **Update the .env File:**
+   - Add these keys to the `.env` file:
+     ```
+     STRIPE_SECRET_KEY=your_stripe_secret_key
+     STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+     ```
 
-2. **Import to Glitch**:
-    - Once the project is imported into Glitch, proceed to the next step to set up your environment variables.
+### Step 3: Sync with GitHub and Deploy to Glitch
 
-## Step 4: Setting Up Your .env File
+1. **Import Project from GitHub:**
+   - Fork the project from [tarekwxcc/Multi-Demo-Portal-Glitch](https://github.com/tarekwxcc/Multi-Demo-Portal-Glitch).
+   - In Glitch, choose "Import from GitHub" and import the repository.
 
-1. **Import the `remove.env.js` Resource**:
-    - Download `remove.env.js` from the project, rename it to `.env` after removing `.js`, and place it in the root of your project.
-    - The .env file will include the default vertical table configurations (`AIRTABLE_VERTICAL_TABLE` and `AIRTABLE_CONFIG_TABLE`), but the rest of the variables will be left blank for you to fill in.
+2. **Set Up .env:**
+   - After importing, rename the `remove.env.js` file to `.env`, and fill in the details (e.g., Airtable, Stripe, webhook variables).
 
-2. **Update the .env with Your Details**:
-    - **Airtable**: 
-        ```
-        AIRTABLE_API_KEY=your_airtable_api_key
-        AIRTABLE_BASE_ID=your_airtable_base_id
-        ```
-    - **Stripe**:
-        ```
-        STRIPE_SECRET_KEY=your_stripe_secret_key
-        STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
-        ```
+### Step 4: Build Your Own Vertical
 
-3. **Webhook URLs**:
-    - Set your webhook endpoints for payment and confirmation notifications:
-        ```
-        SEND_PAYMENT_WEBHOOK_URL=your_webhook_url_for_payment_notifications
-        CONFIRMATION_WEBHOOK_URL=your_confirmation_webhook_url
-        ```
+1. **Customizing a Vertical:**
+   - In the Airtable *Configuration Table*, add new verticals by creating new rows with appropriate action texts, product details, and statuses.
 
-4. **Payload Details**:
-    - **SEND_PAYMENT_WEBHOOK_URL** will receive the following payload:
-        ```json
-        {
-            "text": "Thank you for trusting us with your order. We have generated a secure payment link for you: {{paymentLink}}"
-        }
-        ```
-    - **CONFIRMATION_WEBHOOK_URL** will receive a payload similar to:
-        ```json
-        {
-            "transaction": {
-                "id": "pi_3PvmYK2NQwEappxd0VzojF4V",
-                "amount": 3500,
-                "currency": "usd",
-                "status": "succeeded",
-                "customer": "Anonymous Customer",
-                "paymentMethod": "pm_1PvmYJ2NQwEappxdwowcWxSI",
-                "paymentDate": "2024-09-05T16:45:16"
-            }
-        }
-        ```
+2. **Key Fields to Update:**
+   - **actionText**: Text for UI elements like headers, buttons, and messages.
+   - **productVerified**: Products/services associated with the vertical.
+   - **currentStatusElements**: Manage the display of order status in the portal.
 
-## Step 5: Build Your Own Vertical
+## Webhooks
+- **SEND_PAYMENT_WEBHOOK_URL**: A payload is sent upon generating a payment link:
+  ```json
+  {
+      "text": "Thank you for trusting us with your order. We have generated a secure payment link for you: {{paymentLink}}"
+  }
+  ```
+- **CONFIRMATION_WEBHOOK_URL**: Receives payment confirmation data in the following format:
+  ```json
+  {
+      "transaction": {
+          "id": "pi_3PvmYK2NQwEappxd0VzojF4V",
+          "amount": 3500,
+          "currency": "usd",
+          "status": "succeeded",
+          "customer": "Anonymous Customer",
+          "paymentMethod": "pm_1PvmYJ2NQwEappxdwowcWxSI",
+          "paymentDate": "2024-09-05T16:45:16"
+      }
+  }
+  ```
 
-This step is covered in the video **"Tarek Multi-Demo-Portal, Part 3"**.
-
-1. **Customizing the Vertical**:
-    - In the Airtable `Configuration Table`, create a new row and fill in the details for a new vertical (e.g., action texts, product details).
-    - You can use **BridgeIT ChatGPT** to help customize action texts or create new demo scenarios.
-
-2. **Key Fields**:
-    - **actionText**: Text for UI elements like headers, buttons, and confirmation messages.
-    - **productVerified**: Stores products or services for a vertical.
-    - **currentStatusElements**: Manages how order status is displayed in the portal.
-    - **orderPageElements**: Handles order form UI elements.
-
----
-
-### FAQs
-
-**How do I add a new vertical?**
-- Go to the `Configuration Table` in Airtable, add a new row, and fill in the details for the new vertical (e.g., action texts, product details).
-
-**How do I set up Stripe in test mode?**
-- Stripe defaults to test mode for test accounts. Ensure you're using test cards for transactions.
-
-**How do I view payment confirmations?**
-- Payment confirmations are sent via the webhook to your specified endpoint and will be displayed on the confirmation page.
-
-**How do I deploy changes from GitHub?**
-- Sync your Glitch project with GitHub, and changes will be deployed when you push updates to the main branch.
+## Additional Resources
+- `remove.env.js`: Use this resource to rename and set up your `.env` file.
+- Webhook examples for SMS/WhatsApp (ensure correct setup with your phone number).
