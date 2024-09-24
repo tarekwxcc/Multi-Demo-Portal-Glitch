@@ -23,7 +23,7 @@ To guide you through the entire process, here are 3 video tutorials, plus a bonu
 
 ## Prerequisites
 To use this portal, you’ll need:
-1. An Airtable account with an API key
+1.	An Airtable account with a Personal Access Token (due to the deprecation of API keys)
 2. A Stripe account for payment processing
 3. A hosting service like Glitch (syncing with GitHub is recommended)
 
@@ -34,14 +34,14 @@ To use this portal, you’ll need:
 1. **Import the Airtable Base:**
    - [Click here to access and copy the Airtable base](https://airtable.com/appiuy3ZRMNu7BQLd/shrN4PkssfLMNGi3u). This base contains the two required tables: *Current Vertical* and *Configuration Table*.
    
-2. **Retrieve API Details:**
-   - Go to your Airtable account settings and retrieve your **AIRTABLE_API_KEY**.
-   - In your imported base, copy the **AIRTABLE_BASE_ID** from the Airtable URL (e.g., airtable.com/{base_id}/...).
+2.	**Retrieve Personal Access Token and API Details:**
+	•	Go to your Airtable account settings and create a Personal Access Token (since API keys are deprecated).
+	•	In your imported base, copy the AIRTABLE_BASE_ID from the Airtable URL (e.g., airtable.com/{base_id}/…).
 
 3. **Update the .env File:**
    - Create a `.env` file in your project. You can use the `remove.env.js` resource file (found in the repository), rename it to `.env`, and add the following variables:
      ```
-     AIRTABLE_API_KEY=your_airtable_api_key
+     AIRTABLE_API_KEY=your_personal_access_token
      AIRTABLE_BASE_ID=your_airtable_base_id
      AIRTABLE_VERTICAL_TABLE=Current Vertical
      AIRTABLE_CONFIG_TABLE=Configuration Table
