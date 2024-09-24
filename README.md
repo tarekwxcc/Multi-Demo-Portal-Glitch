@@ -9,10 +9,10 @@ This portal is designed to handle booking services for multiple verticals (e.g.,
 
 To guide you through the entire process, here are 3 video tutorials, plus a bonus video:
 
-1. [Demo and value of the portal](https://app.vidcast.io/share/82eb400a-3959-4954-879b-60d171141b63) (8min 52sec)
-2. [Setting up the portal](https://app.vidcast.io/share/03ef95a2-8e49-4fed-b4b9-3f328ed66e73) (9min 01sec)
-3. [Customization and creating a new vertical for a custom demo](https://app.vidcast.io/share/03ef95a2-8e49-4fed-b4b9-3f328ed66e73) (12min 44sec)
-4. Bonus: [Preparing for my upcoming insurance demo](https://app.vidcast.io/share/6a7742a7-fc88-40df-98d6-4790dbfc6973) (7min 37sec)
+1. [Demo and value of the portal](https://app.vidcast.io/share/82eb400a-3959-4954-879b-60d171141b63)'(8min 52sec)
+2. [Setting up the portal](https://app.vidcast.io/share/03ef95a2-8e49-4fed-b4b9-3f328ed66e73)'(9min 01sec)
+3. [Customization and creating a new vertical for a custom demo](https://app.vidcast.io/share/03ef95a2-8e49-4fed-b4b9-3f328ed66e73)'(12min 44sec)
+4. Bonus: [Preparing for my upcoming insurance demo](https://app.vidcast.io/share/6a7742a7-fc88-40df-98d6-4790dbfc6973)'(7min 37sec)
 
 ## Features:
 - Customizable verticals
@@ -50,7 +50,7 @@ To use this portal, you’ll need:
 ### Step 2: Stripe Setup
 
 1. **Create a Stripe Account:**
-   - Go to [Stripe](https://stripe.com) and create a test account.
+   - Go to [Stripe](https://stripe.com)' and create a test account.
    - In the dashboard, navigate to **API keys** and copy your **STRIPE_SECRET_KEY**.
 
 2. **Setting Up Webhook Endpoint:**
@@ -67,7 +67,7 @@ To use this portal, you’ll need:
 ### Step 3: Sync with GitHub and Deploy to Glitch
 
 1. **Import Project from GitHub:**
-   - Fork the project from [tarekwxcc/Multi-Demo-Portal-Glitch](https://github.com/tarekwxcc/Multi-Demo-Portal-Glitch).
+   - Fork the project from [tarekwxcc/Multi-Demo-Portal-Glitch](https://github.com/tarekwxcc/Multi-Demo-Portal-Glitch)'.
    - In Glitch, choose "Import from GitHub" and import the repository.
 
 2. **Set Up .env:**
