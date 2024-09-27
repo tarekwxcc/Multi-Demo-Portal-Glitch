@@ -57,52 +57,37 @@ To use this portal, you’ll need:
 
 ### Step 3: Stripe Setup
 
-**High-level instructions** (if the high-level instructions aren't clear enough, detailed instructions of Step 3 are next)
+**Detailed Stripe Instructions:**
 
 1. **Create a Stripe Account:**
    - Go to [Stripe](https://stripe.com)' and create a test account.
-   - In the dashboard, navigate to **API keys** and copy your **STRIPE_SECRET_KEY**.
+   -	Once logged in, in home view, navigate to **developers**. On the right-hand upper corner.
+   -  Under the Developers section, find and click on **API Keys**, the second tab.
+   -	Here, you will see your Publishable Key and Secret Key. You need the Secret Key. Click on Reveal Test Key since you are in test mode, and copy the Secret Key.
+   - You'll paste this into your .env file under the variable **STRIPE_SECRET_KEY**, you can take note of it for now.
+
+Example:
+
+STRIPE_SECRET_KEY=your_stripe_secret_key
 
 2. **Setting Up Webhook Endpoint:**
-   - In the Stripe dashboard, go to **Developers > Webhooks**, create a new webhook, and set the endpoint URL to your glitch link adding `/webhook` at the end (e.g., `https://your-app.glitch.me/webhook`).
-   - Select **payment_intent.succeeded** as the event to listen for and copy the **STRIPE_WEBHOOK_SECRET**.
 
-3. **Take note of the .env values:**
+   - In the Stripe dashboard, click on Developers from the left-hand menu, and then go to Webhooks.
+   - Click on Add endpoint to create a new webhook. In the field Endpoint URL, add your `https://your-app.glitch.me/webhook` URL (if you have skipped the glitch setup, you can set a placeholder URL for now but please remember to update it with the glitch link).
+   - Under Events to send, select **payment_intent.succeeded** (this event is triggered when a payment is successfully made).
+   - Click Add endpoint to complete the setup.
+   - Copy the Webhook **Signing Secret** that appears in the dashboard after creating the webhook, under **signing secret** you need to click on Reveal. This will be used as the **STRIPE_WEBHOOK_SECRET** in your .env file. You can take note of the value for now.
+
+3. **Recap : Take note of the .env values:**
    - You'll add these keys to the `.env` file in step 6, you can take note of them for now : 
      ```
      STRIPE_SECRET_KEY=your_stripe_secret_key
      STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
      ```
 
-**Detailed Stripe Instructions:**
-
-1. Setting up the Stripe Secret Key:
-
-In order to connect Stripe with your portal for payment processing, follow these steps:
-
-	•	Go to Stripe’s website and log in or create an account.
-	•	Once logged in, in home view, navigate to developers. On the right-hand upper corner.
-	•	Under the Developers section, find and click on API Keys, the second tab.
-	•	Here, you will see your Publishable Key and Secret Key. You need the Secret Key. Click on Reveal Test Key since you are in test mode, and copy the Secret Key.
-	•	You'll paste this into your .env file under the variable STRIPE_SECRET_KEY, you can take note of it for now.
-
-Example:
-
-STRIPE_SECRET_KEY=your_stripe_secret_key
-
-2. Setting up the Stripe Webhook Endpoint:
-
-Before setting up your Glitch URL, you need to first set up Stripe with a placeholder URL for the webhook. You will update this once your Glitch project is deployed:
-
-	•	In the Stripe dashboard, click on Developers from the left-hand menu, and then go to Webhooks.
-	•	Click on Add endpoint to create a new webhook. In the field Endpoint URL, add your `https://your-app.glitch.me/webhook` URL (you can set a placeholder URL for now but please remember to update it with the glitch link).
-   •	Under Events to send, select payment_intent.succeeded (this event is triggered when a payment is successfully made).
-	•	Click Add endpoint to complete the setup.
-	•	Copy the Webhook Signing Secret that appears in the dashboard after creating the webhook, under signing secret you need to click on Reveal. This will be used as the STRIPE_WEBHOOK_SECRET in your .env file. You can note it for now.
-
 ### Step 5: Create Webex Connect Webhooks
 
-## Webhooks usage
+**Webhooks usage**
 - **SEND_PAYMENT_WEBHOOK_URL**: A payload is sent upon generating a payment link:
   ```json
   {
@@ -124,7 +109,7 @@ Before setting up your Glitch URL, you need to first set up Stripe with a placeh
   }
   ```
 
-## Webhooks creation
+**Webhooks creation**
 Webhook examples that I use are provided on the [OneDrive link](https://cisco-my.sharepoint.com/my?id=%2Fpersonal%2Ftayadi%5Fcisco%5Fcom%2FDocuments%2FTarek%20Mult%2DDemo%2DPortal%20resources). You can import to get started
 - MultiDemoPortal Send Payment Link.worflow. This is an example of the **SEND_PAYMENT_WEBHOOK_URL** that will receive the paiment link for SMS/WhatsApp (ensure correct setup with your phone number). 
 - MultiDemoPortal Send Payment Confirmation.workflow. This is an example for **CONFIRMATION_WEBHOOK_URL** that will receive the payment confirmation data, be sure to update the email address that will receive the information, or you can come up with how you want to transfer the information to your "customer" and how to format the payload received.
@@ -136,14 +121,14 @@ Webhook examples that I use are provided on the [OneDrive link](https://cisco-my
    - You can import into glitch provided file named `remove.env.js` to avoid having to create all variables. 
    - Rename the `remove.env.js` file to `.env`, and fill in the previously noted details (e.g., Airtable, Stripe, webhook variables). Here is the complete list : 
 
-AIRTABLE_API_KEY=your_airtable_api_key_or_personal_access_token
-AIRTABLE_BASE_ID=your_airtable_base_id
-AIRTABLE_VERTICAL_TABLE=Current Vertical (unchanged)
-AIRTABLE_CONFIG_TABLE=Configuration Table (unchanged)
-STRIPE_SECRET_KEY=your_stripe_secret_key
-STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
-SEND_PAYMENT_WEBHOOK_URL=your_webhook_url_for_payment_notifications
-CONFIRMATION_WEBHOOK_URL=your_confirmation_webhook_url
+- AIRTABLE_API_KEY=your_airtable_api_key_or_personal_access_token
+- AIRTABLE_BASE_ID=your_airtable_base_id
+- AIRTABLE_VERTICAL_TABLE=Current Vertical (unchanged)
+- AIRTABLE_CONFIG_TABLE=Configuration Table (unchanged)
+- STRIPE_SECRET_KEY=your_stripe_secret_key
+- STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+- SEND_PAYMENT_WEBHOOK_URL=your_webhook_url_for_payment_notifications
+- CONFIRMATION_WEBHOOK_URL=your_confirmation_webhook_url
 
 ### Step 7: Build Your Own Vertical
 
