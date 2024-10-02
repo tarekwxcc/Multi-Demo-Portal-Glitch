@@ -59,15 +59,15 @@ To use this portal, you’ll need:
 
 Once you import the project from GitHub to Glitch:
 
-	1.	Open the Terminal in Glitch:
-	•	On Glitch, click on the “Tools” button on the bottom left.
-	•	Select “Terminal” to open the console.
-	2.	Install Dependencies:
-	•	In the terminal, run:
+1. Open the Terminal in Glitch:
+- On Glitch, click on the “Tools” button on the bottom left.
+- Select “Terminal” to open the console.
+2. Install Dependencies:
+- In the terminal, run:
 
-      ```
+```
 npm install
-     ```
+```
 This command installs all the necessary packages specified in the package.json file, which are required for the portal to work.
 
 This step ensures that all required dependencies, such as express, ejs, stripe, axios, and airtable, are installed.
