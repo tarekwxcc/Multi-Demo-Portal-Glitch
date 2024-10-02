@@ -36,7 +36,7 @@ To use this portal, you’ll need:
    - [Click here to access and copy the Airtable base](https://airtable.com/appiuy3ZRMNu7BQLd/shrN4PkssfLMNGi3u). This base contains the two required tables: *Current Vertical* and *Configuration Table*.
    
 2.	**Retrieve Personal Access Token and API Details:**
-	•	Go to your Airtable account settings and create a Personal Access Token (since API keys are deprecated).
+	•	Go to your Airtable account settings and create a Personal Access Token (since API keys are deprecated). (it should look like patHLGQIjzqRPaRNI.XXXXXX not to be confisued with the key ID that also starts with pat)
 	•	In your imported base, copy the AIRTABLE_BASE_ID from the Airtable URL (e.g., airtable.com/{base_id}/…).
 
 3. **Take note of the .env File:**
@@ -54,6 +54,23 @@ To use this portal, you’ll need:
    - Fork the project from [tarekwxcc/Multi-Demo-Portal-Glitch](https://github.com/tarekwxcc/Multi-Demo-Portal-Glitch)'.
    - In Glitch, choose "Import from GitHub" and import the repository.
    - Take note of the github URL (optional : you can update the URL to a significant name on Settings/Edit project details)
+  
+2. **Install Dependencies on Glitch::**
+
+Once you import the project from GitHub to Glitch:
+
+	1.	Open the Terminal in Glitch:
+	•	On Glitch, click on the “Tools” button on the bottom left.
+	•	Select “Terminal” to open the console.
+	2.	Install Dependencies:
+	•	In the terminal, run:
+
+      ```
+npm install
+     ```
+This command installs all the necessary packages specified in the package.json file, which are required for the portal to work.
+
+This step ensures that all required dependencies, such as express, ejs, stripe, axios, and airtable, are installed.
 
 ### Step 3: Stripe Setup
 
