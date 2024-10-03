@@ -24,7 +24,7 @@ To guide you through the entire process, here are 3 video tutorials, plus a bonu
 
 ## Prerequisites
 To use this portal, you’ll need:
-1.	An Airtable account with a Personal Access Token (due to the deprecation of API keys)
+1. An Airtable account with a Personal Access Token (due to the deprecation of API keys)
 2. A Stripe account for payment processing
 3. A hosting service like Glitch (syncing with GitHub is recommended)
 
@@ -36,10 +36,14 @@ To use this portal, you’ll need:
    - [Click here to access and copy the Airtable base](https://airtable.com/appiuy3ZRMNu7BQLd/shrN4PkssfLMNGi3u). This base contains the two required tables: *Current Vertical* and *Configuration Table*.
    
 2.	**Retrieve Personal Access Token and API Details:**
-	•	Go to your Airtable account settings and create a Personal Access Token (since API keys are deprecated). (it should look like patHLGQIjzqRPaRNI.XXXXXX not to be confisued with the key ID that also starts with pat)
-	•	In your imported base, copy the AIRTABLE_BASE_ID from the Airtable URL (e.g., airtable.com/{base_id}/…).
 
-3. **Take note of the .env File:**
+•	Go to your Airtable account settings and create a Personal Access Token (since API keys are deprecated). (it should look like patHLGQIjzqRPaRNI.XXXXXX not to be confisued with the key ID that also starts with pat)
+
+•	The scopes need to include at least data.records:read and data.records:write
+
+•	In your imported base, copy the AIRTABLE_BASE_ID from the Airtable URL (e.g., airtable.com/{base_id}/…).
+
+4. **Take note of the .env File:**
    - On step 6, we will update a `.env` file in a glitch project. On the step we need to take note of the following variables:
      ```
      AIRTABLE_API_KEY=your_personal_access_token
