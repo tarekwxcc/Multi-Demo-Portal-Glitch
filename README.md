@@ -135,6 +135,7 @@ Webhook examples that I use are provided on the [OneDrive link](https://cisco-my
 - MultiDemoPortal Send Payment Link.worflow. This is an example of the **SEND_PAYMENT_WEBHOOK_URL** that will receive the paiment link for SMS/WhatsApp (ensure correct setup with your phone number). 
 - MultiDemoPortal Send Payment Confirmation.workflow. This is an example for **CONFIRMATION_WEBHOOK_URL** that will receive the payment confirmation data, be sure to update the email address that will receive the information, or you can come up with how you want to transfer the information to your "customer" and how to format the payload received.
 
+You'll need to replace everything that is marked that starts with "REPLACE_". Also the flow Custom Variables need to be populated/updated to your own demo environment.
 
 ### Step 6: Update .env variables from previously created elements 
 
